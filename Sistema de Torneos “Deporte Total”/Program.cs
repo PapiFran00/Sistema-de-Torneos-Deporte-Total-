@@ -21,6 +21,7 @@ namespace Sistema_de_Torneos__Deporte_Total_
 
             while (true)
             {
+                Console.Clear();
 
                 Console.WriteLine("Bienvenidos");
                 Console.WriteLine("\nSeleccione una opcion:");
@@ -30,8 +31,9 @@ namespace Sistema_de_Torneos__Deporte_Total_
                 Console.WriteLine(" 4. Ver tabla de posiciones");
                 Console.WriteLine(" 5. Ver historial de partidos");
                 Console.WriteLine(" 6. Salir\n");
+                
 
-                opcion = Convert.ToInt32(Console.ReadLine());
+                opcion = int.Parse(Console.ReadLine());
 
 
                 switch (opcion)
@@ -39,6 +41,9 @@ namespace Sistema_de_Torneos__Deporte_Total_
                     case 1:
 
                         CrearEquipo();
+
+                        Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                        Console.ReadKey();
 
                         break;
 
@@ -48,6 +53,10 @@ namespace Sistema_de_Torneos__Deporte_Total_
                         {
 
                             Console.WriteLine("No hay equipos");
+
+
+                            Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                            Console.ReadKey();
 
                         }
 
@@ -62,7 +71,13 @@ namespace Sistema_de_Torneos__Deporte_Total_
 
                             }
                             Console.WriteLine();
+
+
+                            Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                            Console.ReadKey();
                         }
+
+
 
                         break;
 
@@ -70,12 +85,16 @@ namespace Sistema_de_Torneos__Deporte_Total_
 
                         CrearPartido(listaEquipos, listaPartidos);
 
+                        Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                        Console.ReadKey();
                         break;
 
                     case 4:
 
                         TablaDePosiciones(listaEquipos);
 
+                        Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                        Console.ReadKey();
                         break;
 
                     case 5:
@@ -85,6 +104,8 @@ namespace Sistema_de_Torneos__Deporte_Total_
 
                             Console.WriteLine("Aun no hay partidos");
 
+                            Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                            Console.ReadKey();
                         }
 
                         else
@@ -98,6 +119,9 @@ namespace Sistema_de_Torneos__Deporte_Total_
 
                             }
                             Console.WriteLine();
+
+                            Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                            Console.ReadKey();
                         }
 
                         break;
@@ -106,6 +130,7 @@ namespace Sistema_de_Torneos__Deporte_Total_
 
                         Console.WriteLine("Saliendo...\n");
 
+                        
                         return;
 
                     default:
@@ -274,7 +299,7 @@ namespace Sistema_de_Torneos__Deporte_Total_
                     for (int j = i; j < equipos.Count; j++)
                     {
 
-                        if (equipos[j].Puntos > equipos[i].Puntos)
+                        if (equipos[j].Puntos > equipos[i].Puntos)  
                         {
                             Equipo aux = equipos[i];
                             equipos[i] = equipos[j];
